@@ -1,0 +1,30 @@
+@startuml
+(*) -down-> "Sequencer01"
+
+"Sequencer01" -down-> "RouteSearch"
+"Sequencer01" -down-> "Sequencer02"
+
+"Sequencer02" -down-> "FollowLane"
+"Sequencer02" -down-> "Sequencer03"
+"Sequencer02" -down-> "Sequencer04"
+"Sequencer02" -down-> "Sequencer05"
+"Sequencer02" -down-> "Sequencer06"
+
+"Sequencer03" -down-> "StoppingAtObstacle"
+"Sequencer03" -down-> "StoppedAtObstacle"
+"Sequencer03" -down-> "Selector01"
+
+"Selector01" -down-> "WaitUntilTheObjectMoves"
+"Selector01" -down-> "AvoidObstacleWithoutLaneViolation"
+"Selector01" -down-> "AvoidObstaclewithLaneViolation"
+
+"Sequencer04" -down-> "StoppingAtStopLine"
+"Sequencer04" -down-> "StoppedAtStopLine"
+
+"Sequencer05" -down-> "StoppingAtBusStop"
+"Sequencer05" -down-> "StoppedAtBusStop"
+
+"Sequencer06" -down-> "TryLaneChange"
+"Sequencer06" -down-> "ChangingLane"
+
+@enduml
