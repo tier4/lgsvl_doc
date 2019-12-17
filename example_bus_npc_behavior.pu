@@ -8,15 +8,16 @@
 "Sequencer02" -down-> "Sequencer03"
 "Sequencer02" -down-> "Sequencer04"
 "Sequencer02" -down-> "Sequencer05"
+"Sequencer02" -down-> "Selector02"
 "Sequencer02" -down-> "Sequencer06"
 
 "Sequencer03" -down-> "StoppingAtObstacle"
 "Sequencer03" -down-> "StoppedAtObstacle"
 "Sequencer03" -down-> "Selector01"
 
-"Selector01" -down-> "WaitUntilTheObjectMoves"
-"Selector01" -down-> "AvoidObstacleWithoutLaneViolation"
-"Selector01" -down-> "AvoidObstaclewithLaneViolation"
+"Selector01" -down-> "WaitUntilObstacleMoves"
+"Selector01" -down-> "Sequencer07"
+"Selector01" -down-> "Sequencer08"
 
 "Sequencer04" -down-> "StoppingAtStopLine"
 "Sequencer04" -down-> "StoppedAtStopLine"
@@ -24,7 +25,26 @@
 "Sequencer05" -down-> "StoppingAtBusStop"
 "Sequencer05" -down-> "StoppedAtBusStop"
 
+"Selector02" -down-> "Sequencer09"
+"Selector02" -down-> "Sequencer10"
+"Selector02" -down-> "Sequencer11"
+
 "Sequencer06" -down-> "TryLaneChange"
 "Sequencer06" -down-> "ChangingLane"
+
+"Sequencer07" -down-> "WaitUntilTargetLaneClear"
+"Sequencer07" -down-> "AvoidObstacleWithLaneChange"
+
+"Sequencer08" -down-> "WaitUntilOppositeLaneClear"
+"Sequencer08" -down-> "AvoidObstaclewithLaneViolation"
+
+"Sequencer09" -down-> "WaitUntilYeildLaneClear"
+"Sequencer09" -down-> "PassThroughTheIntersection"
+
+"Sequencer10" -down-> "WaitUntilLeftTurnYeildLaneClear"
+"Sequencer10" -down-> "TurnLeftInTheIntersection"
+
+"Sequencer11" -down-> "WaitUntilRightTurnYeildLaneClear"
+"Sequencer11" -down-> "TurnRightInTheIntersection"
 
 @enduml
